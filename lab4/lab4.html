@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 4: Textures & Normal Maps</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="../three.js-master/build/three.js"></script>
+		<script>
+			// setup the scene
+      			var scene = new THREE.Scene();
+      			var camera = new THREE.PerspectiveCamera(75, 
+					window.innerWidth/window.innerHeight, 0.1, 1000);
+      			var renderer = new THREE.WebGLRenderer();
+      			renderer.setSize(window.innerWidth, window.innerHeight);
+      			document.body.appendChild(renderer.domElement);
+				camera.position.z = 5;
+			
+			// setup the cube
+				var geometry = new THREE.BoxGeometry();
+				var texture = THREE.ImageUtils.loadTexture("156.jpg");
+				var texture2 = THREE.ImageUtils.loadTexture("157.jpg");
+				var texture3 = THREE.ImageUtils.loadTexture("151.jpg");
+				var texture5 = THREE.ImageUtils.loadTexture("163.jpg");
+				var normMap = THREE.ImageUtils.loadTexture("156_norm.jpg");
+				var normMap2 = THREE.ImageUtils.loadTexture("161_norm.jpg");
+				var normMap3 = THREE.ImageUtils.loadTexture("152_norm.jpg");
+				var material = new THREE.MeshPhongMaterial({map: texture, normalMap: normMap});
+      			var cube = new THREE.Mesh(geometry, material);
+     			scene.add(cube);
+				
+				var material = new THREE.MeshPhongMaterial( { map: texture } );
+				var cube2 = new THREE.Mesh(geometry, material);
+				scene.add(cube2);
+				cube2.position.x -= 2;
+				
+				var material = new THREE.MeshPhongMaterial( { map: texture2, normalMap: normMap2});
+				var cube3 = new THREE.Mesh(geometry, material);
+				scene.add(cube3);
+				cube3.position.x += 2;
+				
+				var material = new THREE.MeshPhongMaterial( { map: texture3, normalMap: normMap3});
+				var cube4 = new THREE.Mesh(geometry, material);
+				scene.add(cube4);
+				cube4.position.y += 2;
+				
+			// add the light
+			var light = new THREE.PointLight(0xffffff, 1, 1000);
+			light.position.set(10, 10, 10);
+			scene.add(light);
+			
+			var geometry1, material1, mesh1;
+
+			function addTextureShaderCube() {
+				if(count == 2) {
+					var uniforms = {texture1: { type: "t", value: 
+						THREE.ImageUtils.loadTexture("157.jpg")}};
+					geometry1 = new THREE.BoxGeometry(1, 1, 1);
+					material1 =  new THREE.ShaderMaterial({
+						uniforms: uniforms,
+						fragmentShader: fshader,
+						vertexShader: vshader,
+						precision: "mediump"});
+
+					mesh1 = new THREE.Mesh(geometry1, material1);
+					mesh1.position.x = 2;
+					scene.add(mesh1);
+				}
+			}
+			
+			var geometry5, material5, mesh5;
+			
+			function addTextureShaderCube2() {
+				if(count2 == 2) {
+					var uniforms2 = {texture1: { type: "t", value: 
+						THREE.ImageUtils.loadTexture("179.jpg")}};
+					geometry5 = new THREE.BoxGeometry(1, 1, 1);
+					material5 =  new THREE.ShaderMaterial({
+						uniforms: uniforms2,
+						fragmentShader: fshader2,
+						vertexShader: vshader2,
+						precision: "mediump"});
+
+					mesh5 = new THREE.Mesh(geometry5, material5);
+					mesh5.position.y = -2;
+					scene.add(mesh5);
+				}
+			}
+
+			THREE.Cache.enabled = true;
+			var count = 0;
+			var count2 = 0;
+			var loader = new THREE.FileLoader();
+			var fshader, vshader, fshader2, vshader2;
+
+			loader.load('shaders/vertexShader.vert',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			vshader = data;
+      			count += 1;
+      			addTextureShaderCube(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+     		// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+			loader.load('shaders/fragmentShader.frag',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			fshader = data;
+      			count += 1;
+      			addTextureShaderCube(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+			// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+			
+			loader.load('shaders/vertexShader2.vert',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			vshader2 = data;
+      			count2 += 1;
+      			addTextureShaderCube2(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+     		// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+			loader.load('shaders/fragmentShader2.frag',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			fshader2 = data;
+      			count2 += 1;
+      			addTextureShaderCube2(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+			// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+			var lightCount = 1;
+			var lightCount2 = 1;
+			light.position.y = 7;
+			function animate() {
+				requestAnimationFrame(animate);
+				renderer.render(scene, camera);
+				if(light.position.x < -7){
+					lightCount = 1;
+					light.position.x = -6.9;
+				} else if(light.position.x > 7){
+					lightCount = -1;
+					light.position.x = 6.9;
+				}
+				light.position.x += (0.1*lightCount);
+				if(light.position.y < -7){
+					lightCount2 = 1;
+					light.position.y = -6.9;
+				} else if(light.position.x > 7){
+					lightCount2 = -1;
+					light.position.y = 6.9;
+				}
+				light.position.y += (0.1*lightCount);
+			}
+			animate();
+
+
+		</script>
+	</body>
+</html>
