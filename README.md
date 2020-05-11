@@ -28,3 +28,11 @@ lab 5:
 I chose to do Part 1.
 https://drive.google.com/file/d/16V5L9PsxAN-NeHJlxtvc5_7gVdHPbLaJ/view?usp=sharing
 For my modifications, I made the car particles red, and made them come from the exhaust, instead of the tire. In addition, I made a rainbow material for the main character, and I replaced the ground and skybox with images on my computer. I also tiled the ground texture to get the full glory of the image.
+
+lab 6:
+I chose to do Part 1.
+Spotlight: A light that shines in a cone, with direction, angle, and position.
+Directional Light: A scene-wide light source that has no position, but does have a rotation value.
+Point Light: The simplest light. Has exclusively position. Effectively a light bulb.
+Area Light: A baking-exclusive light that shines on one side of a 2D plane in space. Has position and rotation.
+
