@@ -23,3 +23,16 @@ Cube 2: This cube was the same as the first, but I also used 156_norm.jpg as a n
 Cube 3: For this cube, I used the three.js built in texture functionality, but I also used 151.jpg as a texture, and 152_norm.jpg as a normal map. This cube went above the others. (This cube is also labeled as cube4 in my code.)
 Cube 4: For this cube, I loaded the texture 157.jpg with the supplied shaders, and moved the cube to the right. (This cube is also labeled as cube3 in my code.)
 Cube 5: For this cube, I used texture 179.jpg, and tiled it in a 2x2 grid. My new shaders were created in seperate shader files, then loaded into lab4.html through code, as the others were. In vertexShader2.vert, I simply wrote "vUv = uv * 2.0;" instead of the default definition. Then, in fragmentShader2.frag, I changed the texture2D code to call "mod(vUv, 1.0)" instead of just "vUv" inside of the function arguments.
+
+lab 5:
+I chose to do Part 1.
+https://drive.google.com/file/d/16V5L9PsxAN-NeHJlxtvc5_7gVdHPbLaJ/view?usp=sharing
+For my modifications, I made the car particles red, and made them come from the exhaust, instead of the tire. In addition, I made a rainbow material for the main character, and I replaced the ground and skybox with images on my computer. I also tiled the ground texture to get the full glory of the image.
+
+lab 6:
+I chose to do Part 1.
+Spotlight: A light that shines in a cone, with direction, angle, and position.
+Directional Light: A scene-wide light source that has no position, but does have a rotation value.
+Point Light: The simplest light. Has exclusively position. Effectively a light bulb.
+Area Light: A baking-exclusive light that shines on one side of a 2D plane in space. Has position and rotation.
+
