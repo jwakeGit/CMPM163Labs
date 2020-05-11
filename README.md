@@ -37,5 +37,7 @@ Point Light: The simplest light. Has exclusively position. Effectively a light b
 Area Light: A baking-exclusive light that shines on one side of a 2D plane in space. Has position and rotation.
 
 ![](lab6/Lab6 Unity Project/bandicam 2020-05-11 13-43-12-896.png)
+
 ![](lab6/Lab6 Unity Project/bandicam 2020-05-11 13-43-19-468.png)
+
 I made this material with an Albedo image of blue cloth, and by turning the smoothness value down to 0.141.
