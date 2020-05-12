@@ -46,4 +46,4 @@ For my textures, I found two images, and put them both in the Assets folder. One
 
 The skybox I added is a 6-sided cube composed of a .jpg of some stars, repeated on all sides.
 
-
+![](lab6/sceneScreenshotTrue.png)
