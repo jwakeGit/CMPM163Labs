@@ -41,3 +41,7 @@ Area Light: A baking-exclusive light that shines on one side of a 2D plane in sp
 ![](lab6/clothMaterial.png)
 
 I made this material with an Albedo image of blue cloth, and by turning the smoothness value down to 0.141.
+
+For my textures, I found two images, and put them both in the Assets folder. One was a pixelated texture of stone, the other of lava.
+
+The skybox I added is a 6-sided cube composed of a .jpg of some stars, repeated on all sides.
