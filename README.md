@@ -45,3 +45,5 @@ I made this material with an Albedo image of blue cloth, and by turning the smoo
 For my textures, I found two images, and put them both in the Assets folder. One was a pixelated texture of stone, the other of lava.
 
 The skybox I added is a 6-sided cube composed of a .jpg of some stars, repeated on all sides.
+
+![](lab6/sceneScreenshot.png)
