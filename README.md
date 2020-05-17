@@ -47,3 +47,8 @@ For my textures, I found two images, and put them both in the Assets folder. One
 The skybox I added is a 6-sided cube composed of a .jpg of some stars, repeated on all sides.
 
 ![](lab6/sceneScreenshotTrue.png)
+
+lab 7:
+https://drive.google.com/file/d/1yxONh1zrK4bWiLFTsTSuAOrecuGBK5b2/view?usp=sharing
+For this scene, I zoomed in on a beach-side section of my mountain range, with the water nearby. (Rest assured, the mountain range is present. The attached image below shows the entirety of the scene.) I used pre-made tree models with a red, oily texture, as well as numerous spheres with my own texture, and 2 green cylinders with a green material. A cubic particle system lies beneath the terrain, constantly letting blue orbs fly up into the air above. The water is a bright red, and waves tumultuously. I also added a procedural skybox, which depicted a dark, desolate sky. 2 spotlights shine above each cylinder, and the cylinders do not cast shadows, to make it appear as though they are radiating this light themselves.
+![](lab7/fullScene.png)
