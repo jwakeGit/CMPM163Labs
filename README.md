@@ -52,3 +52,17 @@ lab 7:
 https://drive.google.com/file/d/1yxONh1zrK4bWiLFTsTSuAOrecuGBK5b2/view?usp=sharing
 For this scene, I zoomed in on a beach-side section of my mountain range, with the water nearby. (Rest assured, the mountain range is present. The attached image below shows the entirety of the scene.) I used pre-made tree models with a red, oily texture, as well as numerous spheres with my own texture, and 2 green cylinders with a green material. A cubic particle system lies beneath the terrain, constantly letting blue orbs fly up into the air above. The water is a bright red, and waves tumultuously. I also added a procedural skybox, which depicted a dark, desolate sky. 2 spotlights shine above each cylinder, and the cylinders do not cast shadows, to make it appear as though they are radiating this light themselves.
 ![](lab7/fullScene.png)
+
+lab 8:
+Tutorial City:
+![](lab8/tutorialCity.png)
+(The original city had an asphalt texture, but I changed it for my custom city.)
+
+City Inspiration Pictures:
+![](lab8/inspiration1.jpg)
+![](lab8/inspiration2.jpg)
+![](lab8/inspiration3.jpg)
+
+Custom City:
+![](lab8/fantasyCity.png)
+In inspiration from my discovered city sources, I decided to try and make some changes to give the city a more rural/fantasy look. Firstly, I changed the asphault texture to a brown stone, then I changed the code to generate a lot more grass. I put this in the middle of the value range, so it would mix in with the buildings. Then, I modified the Perlin Noise coordinates to accomodate for a seed value, and "zoomed out" of the noise, to generate more random building groupings.
