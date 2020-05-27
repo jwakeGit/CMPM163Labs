@@ -66,3 +66,9 @@ City Inspiration Pictures:
 Custom City:
 ![](lab8/fantasyCity.png)
 In inspiration from my discovered city sources, I decided to try and make some changes to give the city a more rural/fantasy look. Firstly, I changed the asphault texture to a brown stone, then I changed the code to generate a lot more grass. I put this in the middle of the value range, so it would mix in with the buildings. Secondly, I modified the horizontal road frequency to be lower, so there are less roads in the city render. Finally, I modified the Perlin Noise coordinates to accomodate for a seed value, and "zoomed out" of the noise, to generate more random building groupings. This was done by dividing the width and height coordinates by a lower number, reducing it from 10.0f to 3.0f.
+
+i. My partner did part 1 of the lab.
+ii. Finding ways to customize and reconstruct the existing code.
+iii. Combining shader code from a previous lab with the existing city.
+
+My partner and I did not help each other with this lab.
